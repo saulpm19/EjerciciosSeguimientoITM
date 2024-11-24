@@ -1,0 +1,15 @@
+﻿@model Ejercicios.Models.Tarea
+
+<h2>Editar Tarea</h2>
+
+<form asp-action="Edit">
+    <div class="form-group">
+        <label for="Nombre">Nombre</label>
+        <input type="text" asp-for="Nombre" class="form-control" />
+        <span asp-validation-for="Nombre" class="text-danger"></span>
+    </div>
+   
+    <button type="submit" class="btn btn-primary mt-3">Guardar</button>
+</form>
+
+

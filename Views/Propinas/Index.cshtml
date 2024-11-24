@@ -1,0 +1,16 @@
+﻿@model Ejercicios.Models.Propina
+
+<h1>Calculadora de Propinas</h1>
+<form asp-action="Calcular" method="post">
+    <div>
+        <label for="MontoTotal">Monto Total:</label>
+        <input asp-for="MontoTotal" />
+        <span asp-validation-for="MontoTotal" class="text-danger"></span>
+    </div>
+    <div>
+        <label for="PorcentajePropina">Porcentaje de Propina:</label>
+        <input asp-for="PorcentajePropina" />
+        <span asp-validation-for="PorcentajePropina" class="text-danger"></span>
+    </div>
+    <button type="submit">Calcular</button>
+</form>

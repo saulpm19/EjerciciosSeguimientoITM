@@ -1,0 +1,43 @@
+﻿@using Ejercicios.Models
+@model IEnumerable<Tarea>
+
+<h2>Lista de Tareas</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Nombre</th>
+            <th>Completada</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+    @foreach (Tarea tarea in Model)
+    {
+        <tr>
+            <td>@tarea.Nombre</td>
+            <td>@tarea.Completada</td>
+            <td>
+                
+
+               
+                <a asp-action="Edit" asp-route-id="@tarea.Id" class="btn btn-sm btn-warning">Editar</a>
+                <a asp-action="Delete" asp-route-id="@tarea.Id" class="btn btn-sm btn-danger">Eliminar</a>
+                @if(@tarea.Completada==false)
+                {
+                    <a asp-action="MarkAsCompleted" asp-route-id="@tarea.Id" class="btn btn-sm btn-primary">Marcar como completada</a>
+                }
+                else{
+                        <a asp-action="MarkAsCompleted" asp-route-id="@tarea.Id" class="btn btn-sm btn-primary">Marcar como no completada</a>
+                }
+                
+
+            </td>
+        </tr>
+    }
+    </tbody>
+</table>
+
+<a asp-action="create">Agregar Tarea</a>
+
+
